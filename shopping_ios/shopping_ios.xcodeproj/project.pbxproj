@@ -87,11 +87,11 @@
 				4ADC08961BBADC0200DC5EC5 /* ViewController.swift */,
 				4ADC08B41BBCEEC200DC5EC5 /* NewItemViewController.swift */,
 				4ADC08B61BBD541100DC5EC5 /* ItemViewController.swift */,
+				4ADC08B81BBE61BD00DC5EC5 /* Item.swift */,
 				4ADC08981BBADC0200DC5EC5 /* Main.storyboard */,
 				4ADC089B1BBADC0300DC5EC5 /* Images.xcassets */,
 				4ADC089D1BBADC0300DC5EC5 /* LaunchScreen.xib */,
 				4ADC08921BBADC0200DC5EC5 /* Supporting Files */,
-				4ADC08B81BBE61BD00DC5EC5 /* Item.swift */,
 			);
 			path = shopping_ios;
 			sourceTree = "<group>";
