@@ -36,12 +36,13 @@
                     <navigationItem key="navigationItem" title="OTO商城购物清单" id="kNo-hz-LzL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kbC-8J-bfA">
                             <connections>
-                                <segue destination="JX6-pa-eDf" kind="push" id="rM1-6c-e5b"/>
+                                <segue destination="JX6-pa-eDf" kind="push" identifier="newItemSegue" id="rM1-6c-e5b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mytableView" destination="LQo-sK-oeN" id="xRU-e6-mit"/>
+                        <segue destination="6RK-bM-Vb6" kind="push" identifier="itemShowSegue" id="CU0-Xs-MTs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -71,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="130" y="302"/>
         </scene>
-        <!--New Item View Controller-->
+        <!--添加商品-->
         <scene sceneID="gNh-PR-2uX">
             <objects>
                 <viewController id="JX6-pa-eDf" customClass="NewItemViewController" customModule="shopping_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,6 +111,9 @@
                                 <state key="normal" title="保存商品信息">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveItem:" destination="JX6-pa-eDf" eventType="touchUpInside" id="PoI-Hm-1ZG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2U-Qx-0gy">
                                 <rect key="frame" x="16" y="106" width="262" height="30"/>
@@ -120,9 +124,58 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9eE-9Z-We9"/>
+                    <navigationItem key="navigationItem" title="添加商品" id="9eE-9Z-We9"/>
+                    <connections>
+                        <outlet property="brandNameTextField" destination="xrY-lK-eo3" id="jsE-yg-4ZS"/>
+                        <outlet property="itemNameTextField" destination="oKF-2h-2H6" id="0i2-a9-KO3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPF-3I-b3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--商品详情预览-->
+        <scene sceneID="MRe-ci-bXU">
+            <objects>
+                <viewController id="6RK-bM-Vb6" customClass="ItemViewShowController" customModule="shopping_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N2Q-Cg-spf"/>
+                        <viewControllerLayoutGuide type="bottom" id="L9r-Ee-fxT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zqa-FG-9la">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIg-Q4-AJU">
+                                <rect key="frame" x="57" y="108" width="207" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7x-NP-kLe">
+                                <rect key="frame" x="57" y="158" width="207" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBk-3j-d2s">
+                                <rect key="frame" x="128" y="249" width="75" height="30"/>
+                                <state key="normal" title="已经购买？">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="isBuy:" destination="6RK-bM-Vb6" eventType="touchUpInside" id="EgM-SZ-P76"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="商品详情预览" id="Lo2-U7-2fR"/>
+                    <connections>
+                        <outlet property="brandNameLabel" destination="h7x-NP-kLe" id="hzy-jA-bcL"/>
+                        <outlet property="itemNameLabel" destination="xIg-Q4-AJU" id="f9b-xJ-rW3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hCC-Uo-cY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>

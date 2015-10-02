@@ -12,6 +12,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     @IBOutlet weak var mytableView: UITableView!
     
+    
+    
     let categoryList = [("牛奶","三元"),("方便面","康师傅"),("巧克力","德芙"),
         ("洗发水","飘柔"),("地板净","滴露"),("果汁","汇源"),("饮料","可口可乐"),("电器","海尔")];
     
@@ -42,7 +44,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return cell;
         
     }
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("itemShowSegue", sender: indexPath.row)
+    }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "itemShowSegue" {
+            var destination:ItemViewShowController = segue.destinationViewController as! ItemViewShowController
+            if sender is Int{
+                var (itemName,brandName) = categoryList[sender as! Int]
+                destination.itemName = itemName
+                destination.brandName = brandName
+            }
+        }
+    }
 
 
 }

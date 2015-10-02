@@ -14,6 +14,8 @@
 		4ADC089F1BBADC0300DC5EC5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADC089D1BBADC0300DC5EC5 /* LaunchScreen.xib */; };
 		4ADC08AB1BBADC0300DC5EC5 /* shopping_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC08AA1BBADC0300DC5EC5 /* shopping_iosTests.swift */; };
 		4ADC08B51BBCEEC200DC5EC5 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC08B41BBCEEC200DC5EC5 /* NewItemViewController.swift */; };
+		4ADC08B71BBD541100DC5EC5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC08B61BBD541100DC5EC5 /* ItemViewController.swift */; };
+		4ADC08B91BBE61BD00DC5EC5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC08B81BBE61BD00DC5EC5 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		4ADC08A91BBADC0300DC5EC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ADC08AA1BBADC0300DC5EC5 /* shopping_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopping_iosTests.swift; sourceTree = "<group>"; };
 		4ADC08B41BBCEEC200DC5EC5 /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		4ADC08B61BBD541100DC5EC5 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		4ADC08B81BBE61BD00DC5EC5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +86,12 @@
 				4ADC08941BBADC0200DC5EC5 /* AppDelegate.swift */,
 				4ADC08961BBADC0200DC5EC5 /* ViewController.swift */,
 				4ADC08B41BBCEEC200DC5EC5 /* NewItemViewController.swift */,
+				4ADC08B61BBD541100DC5EC5 /* ItemViewController.swift */,
 				4ADC08981BBADC0200DC5EC5 /* Main.storyboard */,
 				4ADC089B1BBADC0300DC5EC5 /* Images.xcassets */,
 				4ADC089D1BBADC0300DC5EC5 /* LaunchScreen.xib */,
 				4ADC08921BBADC0200DC5EC5 /* Supporting Files */,
+				4ADC08B81BBE61BD00DC5EC5 /* Item.swift */,
 			);
 			path = shopping_ios;
 			sourceTree = "<group>";
@@ -215,7 +221,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ADC08B91BBE61BD00DC5EC5 /* Item.swift in Sources */,
 				4ADC08971BBADC0200DC5EC5 /* ViewController.swift in Sources */,
+				4ADC08B71BBD541100DC5EC5 /* ItemViewController.swift in Sources */,
 				4ADC08951BBADC0200DC5EC5 /* AppDelegate.swift in Sources */,
 				4ADC08B51BBCEEC200DC5EC5 /* NewItemViewController.swift in Sources */,
 			);
