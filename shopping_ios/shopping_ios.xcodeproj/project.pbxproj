@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A2453701BC021B2005884FC /* SpecialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24536F1BC021B2005884FC /* SpecialsTableViewCell.swift */; };
 		4A88F5451BBECE740020E540 /* SpecialsForSupermarketTVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88F5441BBECE740020E540 /* SpecialsForSupermarketTVCTableViewController.swift */; };
 		4A88F5471BBED3860020E540 /* Specials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88F5461BBED3860020E540 /* Specials.swift */; };
 		4ADC08951BBADC0200DC5EC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC08941BBADC0200DC5EC5 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A24536F1BC021B2005884FC /* SpecialsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecialsTableViewCell.swift; path = Model/SpecialsTableViewCell.swift; sourceTree = "<group>"; };
 		4A88F5441BBECE740020E540 /* SpecialsForSupermarketTVCTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecialsForSupermarketTVCTableViewController.swift; path = Controller/SpecialsForSupermarketTVCTableViewController.swift; sourceTree = "<group>"; };
 		4A88F5461BBED3860020E540 /* Specials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Specials.swift; path = Model/Specials.swift; sourceTree = "<group>"; };
 		4ADC088F1BBADC0200DC5EC5 /* shopping_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shopping_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 				4ADC08921BBADC0200DC5EC5 /* Supporting Files */,
 				4A88F5441BBECE740020E540 /* SpecialsForSupermarketTVCTableViewController.swift */,
 				4A88F5461BBED3860020E540 /* Specials.swift */,
+				4A24536F1BC021B2005884FC /* SpecialsTableViewCell.swift */,
 			);
 			path = shopping_ios;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				4ADC08B71BBD541100DC5EC5 /* ItemViewController.swift in Sources */,
 				4A88F5451BBECE740020E540 /* SpecialsForSupermarketTVCTableViewController.swift in Sources */,
 				4ADC08951BBADC0200DC5EC5 /* AppDelegate.swift in Sources */,
+				4A2453701BC021B2005884FC /* SpecialsTableViewCell.swift in Sources */,
 				4ADC08B51BBCEEC200DC5EC5 /* NewItemViewController.swift in Sources */,
 				4A88F5471BBED3860020E540 /* Specials.swift in Sources */,
 			);

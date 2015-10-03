@@ -76,6 +76,18 @@ NewItemViewControllerDelegate{
         performSegueWithIdentifier("itemShowSegue", sender: indexPath.row)
     }
 
+    //实现UITableViewDataSource协议中额方法，以便允许表格进行删除操作
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    
+    func tableView(tableView: UITableView, 	 indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.Delete
+    }
+    
+    //todo: 滑动时给单元格增加上删除的按钮
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "itemShowSegue" {
             var destination:ItemViewShowController = segue.destinationViewController as! ItemViewShowController

@@ -68,17 +68,29 @@ class SpecialsForSupermarketTVCTableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")
-        let categoryss = Array(categorySpecials.keys)
-        var specialss = categorySpecials[categoryss[indexPath.section]]![indexPath.row]
-        cell.textLabel?.text = specialss.name
-        cell.detailTextLabel?.text = specialss.brand
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        var cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "Cell")
+//        let categoryss = Array(categorySpecials.keys)
+//        var specialss = categorySpecials[categoryss[indexPath.section]]![indexPath.row]
+//        cell.textLabel?.text = specialss.name
+//        cell.detailTextLabel?.text = specialss.brand
+//        
+//        return cell
+//    }
+    
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> SpecialsTableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("SpecialsCell", forIndexPath: indexPath) as! SpecialsTableViewCell
+        let categoryssss = Array(categorySpecials.keys)
+        var specialssss = categorySpecials[categoryssss[indexPath.section]]![indexPath.row]
         
+        cell.nameLabel.text = specialssss.name
+        cell.brandLabel.text = specialssss.brand
+        cell.albumImageView.image = UIImage(named: specialssss.imagesName)
         return cell
     }
     
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
