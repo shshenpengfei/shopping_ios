@@ -8,6 +8,7 @@
 
 import UIKit
 
+//继承 delegate，datasource类，并需要实现其中的必要方法。
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,
 NewItemViewControllerDelegate{
 
