@@ -10,6 +10,9 @@
 		4A2453701BC021B2005884FC /* SpecialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24536F1BC021B2005884FC /* SpecialsTableViewCell.swift */; };
 		4A88F5451BBECE740020E540 /* SpecialsForSupermarketTVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88F5441BBECE740020E540 /* SpecialsForSupermarketTVCTableViewController.swift */; };
 		4A88F5471BBED3860020E540 /* Specials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88F5461BBED3860020E540 /* Specials.swift */; };
+		4AD3DD5F1BC163910000B0BE /* YRHttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3DD5E1BC163910000B0BE /* YRHttpRequest.swift */; };
+		4AD3DD611BC1648D0000B0BE /* UIImageViewWebExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3DD601BC1648D0000B0BE /* UIImageViewWebExt.swift */; };
+		4AD3DD631BC164B40000B0BE /* FileUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3DD621BC164B40000B0BE /* FileUtility.swift */; };
 		4ADC08951BBADC0200DC5EC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC08941BBADC0200DC5EC5 /* AppDelegate.swift */; };
 		4ADC08971BBADC0200DC5EC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC08961BBADC0200DC5EC5 /* ViewController.swift */; };
 		4ADC089A1BBADC0200DC5EC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ADC08981BBADC0200DC5EC5 /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 		4A24536F1BC021B2005884FC /* SpecialsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecialsTableViewCell.swift; path = Model/SpecialsTableViewCell.swift; sourceTree = "<group>"; };
 		4A88F5441BBECE740020E540 /* SpecialsForSupermarketTVCTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecialsForSupermarketTVCTableViewController.swift; path = Controller/SpecialsForSupermarketTVCTableViewController.swift; sourceTree = "<group>"; };
 		4A88F5461BBED3860020E540 /* Specials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Specials.swift; path = Model/Specials.swift; sourceTree = "<group>"; };
+		4AD3DD5E1BC163910000B0BE /* YRHttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRHttpRequest.swift; sourceTree = "<group>"; };
+		4AD3DD601BC1648D0000B0BE /* UIImageViewWebExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewWebExt.swift; sourceTree = "<group>"; };
+		4AD3DD621BC164B40000B0BE /* FileUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtility.swift; sourceTree = "<group>"; };
 		4ADC088F1BBADC0200DC5EC5 /* shopping_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shopping_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADC08931BBADC0200DC5EC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ADC08941BBADC0200DC5EC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,9 +74,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AD3DD5D1BC1636C0000B0BE /* util */ = {
+			isa = PBXGroup;
+			children = (
+				4AD3DD621BC164B40000B0BE /* FileUtility.swift */,
+				4AD3DD601BC1648D0000B0BE /* UIImageViewWebExt.swift */,
+				4AD3DD5E1BC163910000B0BE /* YRHttpRequest.swift */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
 		4ADC08861BBADC0200DC5EC5 = {
 			isa = PBXGroup;
 			children = (
+				4AD3DD5D1BC1636C0000B0BE /* util */,
 				4ADC08911BBADC0200DC5EC5 /* shopping_ios */,
 				4ADC08A71BBADC0300DC5EC5 /* shopping_iosTests */,
 				4ADC08901BBADC0200DC5EC5 /* Products */,
@@ -232,12 +249,15 @@
 			files = (
 				4ADC08B91BBE61BD00DC5EC5 /* Item.swift in Sources */,
 				4ADC08971BBADC0200DC5EC5 /* ViewController.swift in Sources */,
+				4AD3DD631BC164B40000B0BE /* FileUtility.swift in Sources */,
 				4ADC08B71BBD541100DC5EC5 /* ItemViewController.swift in Sources */,
 				4A88F5451BBECE740020E540 /* SpecialsForSupermarketTVCTableViewController.swift in Sources */,
 				4ADC08951BBADC0200DC5EC5 /* AppDelegate.swift in Sources */,
+				4AD3DD611BC1648D0000B0BE /* UIImageViewWebExt.swift in Sources */,
 				4A2453701BC021B2005884FC /* SpecialsTableViewCell.swift in Sources */,
 				4ADC08B51BBCEEC200DC5EC5 /* NewItemViewController.swift in Sources */,
 				4A88F5471BBED3860020E540 /* Specials.swift in Sources */,
+				4AD3DD5F1BC163910000B0BE /* YRHttpRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

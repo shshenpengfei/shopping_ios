@@ -11,6 +11,8 @@ import UIKit
 //继承 delegate，datasource类，并需要实现其中的必要方法。
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,
 NewItemViewControllerDelegate{
+    
+    let launchImgUrl = "https://news-at.zhihu.com/api/4/start-image/640*1136?client=0"
 
     @IBOutlet weak var mytableView: UITableView!
     var categoryList = [
@@ -27,6 +29,7 @@ NewItemViewControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showLauchImage()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -71,22 +74,88 @@ NewItemViewControllerDelegate{
         
     }
     
+    func showLauchImage () {
+        YRHttpRequest.requestWithURL(launchImgUrl,completionHandler:{ data in
+            if data as! NSObject == NSNull()
+            {
+                return
+            }
+            
+            let imgUrl = data["img"] as! String
+            
+            let height = UIScreen.mainScreen().bounds.size.height
+            let width = UIScreen.mainScreen().bounds.size.width
+            let img = UIImageView(frame:CGRectMake(0, 0, width, height))
+            img.backgroundColor = UIColor.blackColor()
+            img.contentMode = UIViewContentMode.ScaleAspectFit
+            
+            let window = UIApplication.sharedApplication().keyWindow
+            window!.addSubview(img)
+            img.setImage(imgUrl,placeHolder:nil)
+            
+            let lbl = UILabel(frame:CGRectMake(0,height-50,width,20))
+            lbl.backgroundColor = UIColor.clearColor()
+            lbl.text = data["text"] as? String
+            lbl.textColor = UIColor.lightGrayColor()
+            lbl.textAlignment = NSTextAlignment.Center
+            lbl.font = UIFont.systemFontOfSize(14)
+            window!.addSubview(lbl)
+            
+            UIView.animateWithDuration(3,animations:{
+                let height = UIScreen.mainScreen().bounds.size.height
+                let rect = CGRectMake(-100,-100,width+200,height+200)
+                img.frame = rect
+                },completion:{
+                    (Bool completion) in
+                    
+                    if completion {
+                        UIView.animateWithDuration(1,animations:{
+                            img.alpha = 0
+                            lbl.alpha = 0
+                            },completion:{
+                                (Bool completion) in
+                                
+                                if completion {
+                                    img.removeFromSuperview()
+                                    lbl.removeFromSuperview()
+                                }
+                        })
+                    }
+            })
+        })
+        
+    }
+
     
+    //但点击某一个单元格时，就会触发这个方法
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //切换一个viewcontroller，目标的编号是itemShowSegue，第二个参数传递了一个NSindexPath类型的变量，告诉选择了哪一个部分的单元格。
         performSegueWithIdentifier("itemShowSegue", sender: indexPath.row)
     }
 
-    //实现UITableViewDataSource协议中额方法，以便允许表格进行删除操作
+    //实现UITableViewDataSource协议中额方法，用于设置指定的单元格是否允许编辑
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        if(indexPath.row<4){
+            return true   //前四个可以删除
+        }
+        else{
+            return false
+        }
     }
     
-    
-    func tableView(tableView: UITableView, 	 indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+    //设置指定的单元格的编辑风格类型
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath	 indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.Delete
     }
     
-    //todo: 滑动时给单元格增加上删除的按钮
+    //处理用户与单元格的交互操作
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            categoryList.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        }
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "itemShowSegue" {
